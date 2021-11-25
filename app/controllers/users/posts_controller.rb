@@ -1,6 +1,6 @@
 module Users
   class PostsController < UsersController
-    before_action :set_post, only: %i[ edit update destroy ]
+    before_action :set_post, only: [:edit, :update, :destroy]
   
     # GET /posts or /posts.json
     def index
@@ -15,17 +15,17 @@ module Users
   
     # GET /posts/1/edit
     def edit
-      @paragraph = @post.elements.build(element_type: 'paragraph')
+      @element = @post.elements.build
     end
   
     # POST /posts
     def create
-      @post = current_user.posts.build(post_params)
-  
+      @post = current_author.posts.build(post_params)
+
       if @post.save
-        redirect_to @post, notice: 'Post was successfully created.'
+        redirect_to edit_post_path(@post)
       else
-        render :new
+        broadcast_errors @post, post_params
       end
     end
   
@@ -52,7 +52,7 @@ module Users
   
       # Only allow a list of trusted parameters through.
       def post_params
-        params.require(:post).permit(:title, :description )
+        params.require(:post).permit(:title, :description, :header_image )
       end
   end
 end
