@@ -12,9 +12,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body class='bg-light users'>
-    <%= render 'shared/navbar' %>
-    <div class="container"> 
+  <body class='bg-light readers'>
+    
+    <div class="container">
+      <%= render 'shared/navbar' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>

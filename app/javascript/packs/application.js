@@ -28,16 +28,15 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
-import '../stylesheets/application'
-
-require("trix")
+const Trix = require("trix")
 require("@rails/actiontext")
 
+Trix.config.blockAttributes.heading1.tagName = "h3";
+
+import Sortable from 'sortablejs'
+import "controllers"
+
+import '../stylesheets/application'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -58,4 +57,9 @@ document.addEventListener('turbolinks:load', () => {
     element.classList.add('d-none')
     element.previousElementSibling.classList.remove('d-none')
   })
+
+  let sortable_elements = document.getElementById('elements')
+  Sortable.create(sortable_elements, { animation: 150 })
 })
+
+
