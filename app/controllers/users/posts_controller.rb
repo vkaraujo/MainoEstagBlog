@@ -2,7 +2,7 @@ module Users
   class PostsController < UsersController
     before_action :set_post, only: [:edit, :update, :destroy]
   
-    # GET /posts or /posts.json
+    # GET /posts
     def index
       @posts = current_user.posts
     end
@@ -31,11 +31,11 @@ module Users
   
     # PATCH/PUT /posts/1
     def update
-        if @post.update(post_params)
-          redirect_to @post, notice: 'Post was successfully updated.'
-        else
-          render :edit
-        end
+      if @post.update(post_params)
+        redirect_to edit_post_path(@post)
+      else
+        broadcast_errors @post, post_params
+      end
     end
   
     # DELETE /posts/1 
@@ -47,7 +47,7 @@ module Users
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_post
-        @post = current_user.posts.find(params[:id])
+        @post = current_user.posts.friendly.find(params[:id])
       end
   
       # Only allow a list of trusted parameters through.

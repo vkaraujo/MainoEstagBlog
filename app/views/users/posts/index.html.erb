@@ -1,5 +1,5 @@
 <h4 class='d-flex justify-content-between mb-4'>
-  <span>Posts</span>
+  <span>My Posts</span>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
 </h4>
 
@@ -11,6 +11,8 @@
           <div class="col-md-2">
             <% if post.header_image.present? %>
               <div class="header-img" style="background-image: url(<%= url_for(post.header_image) %>);"></div>
+            <% else %>
+              <div class="reader-header-image" style="background-image: url(<%= asset_path 'default-placeholder.png' %>);"></div>
             <% end %>
           </div>
           <div class="col-md-10">
