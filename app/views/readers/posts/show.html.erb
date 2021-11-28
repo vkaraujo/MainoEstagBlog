@@ -15,7 +15,10 @@
                 <%= element.content %>
               </div>
             <% end %>
+            
           <% end %>
+          <%= render @post.comments.order(id: :desc) %>
+          <%= render 'form', locals: { post: @post, parent: nil } %>
         </div>
       </div>
     </div>

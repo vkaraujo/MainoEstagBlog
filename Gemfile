@@ -67,4 +67,6 @@ gem "stimulus_reflex", "~> 3.4"
 gem "redis"
 gem 'redis-rails'
 gem 'friendly_id', '~> 5.4.0'
+gem 'will_paginate', '~> 3.3'
+gem 'will_paginate-bootstrap4'
 
