@@ -13,12 +13,15 @@
   </head>
 
   <body class='bg-light users'>
-    <%= render 'shared/navbar' %>
+    
     <div class="container"> 
+      <%= render 'shared/navbar' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
+      <%= render 'shared/footer' %>
     </div>
+
   </body>
   
 </html>

@@ -26,6 +26,9 @@
                     </a>
                 <% end %>
             </div>
+            <div class="card-footer">
+                <%= link_to 'Delete', post_path, method: :delete, class: 'btn btn-danger btn-block', data: { confirm: "Are you sure?" } %>
+            </div>
         </div>
     </div>
     <div class="col-md-8">
@@ -96,7 +99,7 @@
 
                                         <div class="mb-4 p-3 image">
                                             <% if element.image.present? %>
-                                                <%= link_to post_element_path(@post, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "Are you sure?" } do %>
+                                                <%= link_to post_element_path(@post, element), method: :delete, class: 'delete-btn btn btn-danger mt-2 float-right', data: { confirm: "Are you sure?" } do %>
                                                     <i class='fas fa-times'></i>
                                                 <% end %>
                                                 <%= image_tag(element.image) %>

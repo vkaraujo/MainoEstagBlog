@@ -8,15 +8,13 @@
         <li class="nav-item">
           <%= link_to "My Posts", posts_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
-        </li>
+        
         <li class="nav-item">
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
-
-        <i class="fas fa-user-check fa-3x ml-3"></i>
-        
+        <%= link_to edit_user_registration_path do %>
+          <i class="fas fa-user-circle fa-2x ml-3"></i>
+        <% end %>
       <% else %>
         <li class="nav-item active">
           <%= link_to "Home", "/", class: "nav-link" %>

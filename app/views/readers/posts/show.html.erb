@@ -15,9 +15,23 @@
                 <%= element.content %>
               </div>
             <% end %>
+            
           <% end %>
+
+        </div>
+        
+      </div>
+
+    </div>
+    <div class="d-flex justify-content-center container mt-5 mb-5">
+      <div class="row card-header">
+        <div class="col-sm-5 col-md-6 col-12 pb-4">
+          
+          <%= render 'form', locals: { post: @post, parent: nil }, class: "mb-5" %>
+          <%= render @post.comments.order(id: :desc) %>
+          
         </div>
       </div>
-    </div>
+    </div> 
   </div>
 </div>

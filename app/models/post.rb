@@ -3,8 +3,8 @@ class Post < ApplicationRecord
   friendly_id :title, use: [:slugged, :history, :finders]
   
   belongs_to :user
-  has_many :elements
-
+  has_many :elements, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
   has_one_attached :header_image
 
   scope :published, -> do
@@ -18,4 +18,5 @@ class Post < ApplicationRecord
   def should_generate_new_friendly_id?
     title_changed?
   end
+
 end
