@@ -4,7 +4,7 @@ module Users
         
         def create
             @post = Post.find(params[:post_id])
-            @comment = current_user.comments.new(comment_params)
+            @comment = current_or_guest_user.comments.new(comment_params)
             @comment.post = @post
 
             if !@comment.save

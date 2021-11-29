@@ -1,5 +1,5 @@
 <article>
     <p><%= comment.content %></p>
-    <small> by <%= comment.user.email %></small>
+    <small> by <%= comment.user != nil ? comment.user.email : 'Anonymous' %></small>
 </article>
 <hr />
