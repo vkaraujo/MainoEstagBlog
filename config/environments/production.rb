@@ -6,10 +6,11 @@ Rails.application.configure do
   port:                 587,
   domain:               'example.com',
   user_name:            'vkaraujo00@gmail.com',
-  password:             'gdzwgyxwspttffie',
+  password:             ENV.fetch("GMAILPASS"),
   authentication:       'plain',
   enable_starttls_auto: true }
 
+  config.action_mailer.default_url_options = { host: 'mainoblogtest.herokuapp.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
