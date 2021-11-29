@@ -1,14 +1,14 @@
 $footer_height: 100px;
 
 .footer {
-  background: #84B59F;
+  background: #A4C408;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: $footer_height;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  position: fixed;
+  
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -19,7 +19,7 @@ $footer_height: 100px;
 }
 
 .margin-footer {
-  margin-bottom: $footer_height + 16px;
+  margin-bottom: $footer_height + 20px;
 }
 
 .footer-links {
@@ -31,4 +31,8 @@ $footer_height: 100px;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  color:#15609D
 }

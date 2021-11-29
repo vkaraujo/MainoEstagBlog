@@ -1,10 +1,12 @@
 module Users
     class CommentsController < UsersController
-        
+        skip_before_action :authenticate_user!
         
         def create
-            
+            @post = Post.find(params[:post_id])
             @comment = current_user.comments.new(comment_params)
+            @comment.post = @post
+
             if !@comment.save
                 flash[:notice] = @comment.errors.full_messages.to_sentence
             end
@@ -15,12 +17,9 @@ module Users
         
 
         private
-        
+       
         def comment_params
-            params
-            .require(:comment)
-            .permit(:content, :parent_id)
-            .merge(post_id: params[:post_id])
+            params.require(:comment).permit(:content, :parent_id)
         end
         
     end

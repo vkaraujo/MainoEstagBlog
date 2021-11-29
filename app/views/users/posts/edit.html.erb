@@ -26,6 +26,9 @@
                     </a>
                 <% end %>
             </div>
+            <div class="card-footer">
+                <%= link_to 'Delete', post_path, method: :delete, class: 'btn btn-danger btn-block', data: { confirm: "Are you sure?" } %>
+            </div>
         </div>
     </div>
     <div class="col-md-8">
