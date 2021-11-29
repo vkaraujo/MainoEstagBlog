@@ -69,4 +69,5 @@ gem 'redis-rails'
 gem 'friendly_id', '~> 5.4.0'
 gem 'will_paginate', '~> 3.3'
 gem 'will_paginate-bootstrap4'
-
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
