@@ -8,7 +8,7 @@
           <% @post.elements.each do |element| %>
             <% if element.image? %>
               <div class="show-image-element mb-5">
-                <%= image_tag(element.image) %>
+                <%= cl_image_tag element.image.key %>
               </div>
             <% else %>
               <div class="content-element mb-5">
