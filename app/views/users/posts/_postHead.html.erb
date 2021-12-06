@@ -1,0 +1,29 @@
+<%= link_to 'Back', posts_path, class: 'btn btn-dark mb-3' %>
+<div class="card">
+    <div class="card-header">
+        <h6 class="card-title mb-0">Editing Post</h6>
+    </div>
+    <div class="card-body">
+        <%= render 'form', post: @post %>
+    </div>
+    <div class="card-footer">
+        <% if @post.published? %>
+            <a href="#"
+            class='btn btn-secondary btn-block'
+            data-reflex='click->PublisherReflex#unpublish'
+            data-post-id='<%= @post.id %>'>
+            Unpublish
+            </a>
+        <% else %>
+            <a href="#"
+            class='btn btn-dark btn-block'
+            data-reflex='click->PublisherReflex#publish'
+            data-post-id='<%= @post.id %>'>
+            Publish
+            </a>
+        <% end %>
+    </div>
+    <div class="card-footer">
+        <%= link_to 'Delete', post_path, method: :delete, class: 'btn btn-danger btn-block', data: { confirm: "Are you sure?" } %>
+    </div>
+</div>

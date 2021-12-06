@@ -6,7 +6,7 @@
         <div class="pl-5 pr-5 pt-4 pb-4">
           <h1 class="card-title mb-5"><%= @post.title %></h1>
           <% @post.elements.each do |element| %>
-            <% if element.image? %>
+            <% if element.image.present? %>
               <div class="show-image-element mb-5">
                 <%= cl_image_tag element.image.key %>
               </div>
