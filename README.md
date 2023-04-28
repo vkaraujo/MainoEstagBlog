@@ -6,9 +6,6 @@ O blog deverá ser desenvolvido apenas utilizando:
     HTML + CSS + JS + Bootstrap (opcionalmente);
 
     Banco de dados relacional, como PostgreSQL, por exemplo.
-
-Não, você não precisa desenvolver uma app para o backend e outra para o frontend.
-
  
 
 O blog deverá ser dotado das seguintes funcionalidades:
@@ -39,7 +36,7 @@ O blog deverá ser dotado das seguintes funcionalidades:
 
         alterar a senha do usuário loggado.
 
-Você poderá usar quaisquer gems que desejar para acelerar o seu desenvolvimento.
+
 
 Opcionais:
 
